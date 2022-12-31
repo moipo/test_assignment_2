@@ -1,18 +1,3 @@
-<!-- {%for menu in menues3%}
-{{menu}}
-  {% for level in menu.level_set.all%}
-    {{level}}
-  {% endfor%}
-{%endfor%} -->
-
-
-{% for level in menu %}
-    <li>
-        {{ level.title }}
-        {% if level.submenus|length %}
-            <ul>
-                {% include "menu.html" with menu_list=menu.submenus %}
-            </ul>
-        {% endif %}
-    </li>
-{% endfor %}
+<hr>
+  {% include "include/menu_tag.html"%}
+<hr>
