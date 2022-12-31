@@ -7,7 +7,7 @@ class Main:
         ctx = {}
         return render(request,'main.html',ctx)
 
-    def page(request, page_num):
+    def page(request, page_num=1):
         menues = Level.objects.filter(page = page_num)
 
         ctx = {

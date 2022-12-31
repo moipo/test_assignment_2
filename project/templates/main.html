@@ -1,3 +1,4 @@
+{%load levels_tags%}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -27,14 +28,23 @@
         </ul>
       </li>
     </ul>
+
+<hr>
+
+<hr>
+  {% include "include/menu_tag.html"%}
+<hr>
+
+<hr>
+{% with myvar='some_data'%}
+  <h2> My Data: {{myvar}}</h2>
+{%endwith%}
+
+
+
   </body>
 </html>
-  {%for menu in menues%}
-  {{menu}}
-    {% for level in menu.level_set.all%}
-      {{level}}
-    {% endfor%}
-  {%endfor%}
+
 
 
 <style media="screen">
