@@ -29,6 +29,13 @@
     </ul>
   </body>
 </html>
+  {%for menu in menues%}
+  {{menu}}
+    {% for level in menu.level_set.all%}
+      {{level}}
+    {% endfor%}
+  {%endfor%}
+
 
 <style media="screen">
 /* Remove default bullets */
