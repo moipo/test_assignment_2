@@ -1,8 +1,27 @@
 {%extends "main.html"%}
 {%block page_2%}
 {%load levels_tags%}
-{%draw_menu 'ingredients'%}
-{%draw_menu 'menu_2'%}
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+
+
+
+    </div>
+    <div class="col-md-4 ">
+      {%draw_menu 'categories'%}
+      {%draw_menu 'ingredients'%}
+
+    </div>
+    <div class="col-md-4">
+      {%draw_menu 'menu_4'%}
+
+    </div>
+  </div>
+</div>
 
 
 

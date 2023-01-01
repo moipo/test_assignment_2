@@ -4,7 +4,24 @@
 {%block page_1%}
 {%load levels_tags%}
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
 
+      {%draw_menu 'ingredients'%}
+
+
+    </div>
+    <div class="col-md-4 ">
+      {%draw_menu 'categories'%}
+
+    </div>
+    <div class="col-md-4">
+      {%draw_menu 'menu_2'%}
+
+    </div>
+  </div>
+</div>
 
 
 {%endblock%}

@@ -2,12 +2,12 @@
   {%for mn in menues%}
   {%if mn.level_set.all|length%}
       {%if mn in unfolded_items%}
-    <li><a  class = "level" href="?new_disabled_item_id={{mn.id}}">{{mn.title}}</a></li>
+    <li><a  class = "list-group-item level list-group-item-action list-group-item-primary" href="?new_disabled_item_id={{mn.id}}">{{mn.title}}</a></li>
       {%else%}
-    <li><a class = "level" href="?new_active_item_id={{mn.id}}">{{mn.title}}</a></li>
+    <li><a class = "list-group-item level list-group-item-action list-group-item-primary" href="?new_active_item_id={{mn.id}}">{{mn.title}}</a></li>
    {%endif%}
   {%else%}
-    <li>{{mn.title}}</li>
+    <li class = "list-group-item ">{{mn.title}}</li>
   {%endif%}
     {%if mn in unfolded_items%}
         {%if mn.level_set.all|length%}
