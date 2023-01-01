@@ -1,8 +1,12 @@
-  <ul>
-  {%for me in menues%}
-    <li>{{me.title}}</li>
-    {%if me.level_set.all|length%}
-        {% include "include/menu_tag.html" with menues=me.level_set.all%}
-      {%endif%}
+<ul>
+  {%for mn in menues%}
+
+
+    <li><a href="?new_active_item={{mn.title}}">{{mn.title}}</a></li>
+    {%if mn in active_items%}
+      {%if mn.level_set.all|length%}
+          {% include "include/menu_tag.html" with menues=mn.level_set.all%}
+        {%endif%}
+  {%endif%}
   {%endfor%}
-  </ul>
+</ul>
