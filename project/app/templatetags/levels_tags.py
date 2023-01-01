@@ -14,6 +14,6 @@ register = template.Library()
 
 @register.inclusion_tag('inclusion_tags/draw_menu.html', takes_context = True)
 def draw_menu(context, title = None):
-    active_items = context.get('active_items')
+    unfolded_items = context.get('unfolded_items')
     menues = Level.objects.filter(title = title)
-    return {"menues" : menues, "active_items":active_items}
+    return {"menues" : menues, "unfolded_items":unfolded_items}

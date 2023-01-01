@@ -15,17 +15,17 @@ class Main:
 
 
 
-            active_items = [active_item]
+            unfolded_items = [active_item]
 
             while not active_item.is_menu:
                 active_item = active_item.parent_level
-                active_items.append(active_item)
+                unfolded_items.append(active_item)
 
-            pk_list = [i.pk for i in active_items]
-            active_items = Level.objects.filter(pk__in=pk_list)
+            pk_list = [i.pk for i in unfolded_items]
+            unfolded_items = Level.objects.filter(pk__in=pk_list)
 
             ctx = {
-            "active_items":active_items,
+            "unfolded_items":unfolded_items,
             }
             return render(request,'main.html',ctx)
         ctx = {"active_items":None,}
