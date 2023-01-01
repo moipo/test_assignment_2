@@ -3,11 +3,12 @@ from .models import *
 # Create your views here.
 
 class Main:
-    def main(request):
-        ctx = {}
-        return render(request,'main.html',ctx)
+    def homepage(request):
+        return render(request,'homepage.html')
 
-    def page(request, page_num=1):
+
+
+    def page(request):
 
         new_active_item_id = request.GET.get("new_active_item_id")
         new_disabled_item_id = request.GET.get("new_disabled_item_id")
@@ -40,4 +41,6 @@ class Main:
             "unfolded_items":unfolded_items,
             "unfolded_items_id":unfolded_items_id,
             }
-        return render(request,'main.html',ctx)
+
+        page_num = int(request.path[-1])
+        return render(request,f'pages/page_{page_num}.html',ctx)
