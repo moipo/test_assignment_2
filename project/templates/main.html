@@ -91,6 +91,23 @@ display: block;
 </style>
 
 
+<script defer>
+    var levels = document.querySelectorAll(".level")
+    for (var i = 0; i < levels.length; i++)
+    {
+      levels[i].addEventListener('click', function handler(e){
+        e.preventDefault()
+        console.log("{{unfolded_items_id}}")
+        console.log(this.href)
+        window.location = `${this.href}&unfolded_items={{unfolded_items_id}}`
+      })
+    }
+
+
+</script>
+
+
+
 <script type="text/javascript">
 var toggler = document.getElementsByClassName("caret");
 var i;
