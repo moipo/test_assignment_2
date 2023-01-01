@@ -1,11 +1,11 @@
 <ul>
   {%for mn in menues%}
   {%if mn.level_set.all|length%}
-      <!-- {#{%if mn in unfolded_items%} #} -->
-    <!-- <li><a data-id = "{{mn.id}}" class = "level" href="?new_disabled_item={{mn.title}}">{{mn.title}}</a></li> -->
-      <!-- {#{%else%}#} -->
-    <li><a data-id = "{{mn.id}}" class = "level" href="?new_active_item={{mn.title}}">{{mn.title}}</a></li>
-  <!-- {#  {%endif%} #} -->
+      {%if mn in unfolded_items%}
+    <li><a data-id = "{{mn.id}}" class = "level" href="?new_disabled_item_id={{mn.id}}">{{mn.title}}</a></li>
+      {%else%}
+    <li><a data-id = "{{mn.id}}" class = "level" href="?new_active_item_id={{mn.id}}">{{mn.title}}</a></li>
+   {%endif%}
   {%else%}
     <li>{{mn.title}}</li>
   {%endif%}
